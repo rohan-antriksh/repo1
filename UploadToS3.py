@@ -42,8 +42,8 @@ def handler(event, context):
     print(f"Received event - {sns_message}")
 
     # Process event to get source_id
-    source_id_full = sns_message["SourceId"]    
-    if source_id_full.startswith(f'{PROJECTNAME}-{SERVICENAME}') :
+    source_id = sns_message["SourceId"]    
+    if source_id.startswith(f'{PROJECTNAME}-{SERVICENAME}') :
         print(f"Found source id {source_id}")
 
         if env == "uat" or env == "prod":
