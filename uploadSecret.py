@@ -40,7 +40,7 @@ if __name__ == "__main__":
             logger.info(f'Secret does not exist. Creating secret for db - {input_db}')
             _secret = secretsmgr_client.create_secret(
              Name = f'a{ASSETID}/deal-{_input["environment"]}/{input_db}.dbConfig',
-             Description = 'Migration Tools - ngra to audit migration',
+             Description = 'Testing',
              SecretString = f'{{"db_type":"POSTGRES","username":"{input_db}","password":"{input_db}"}}',
             )			
             logger.info(f'Secret created successfully for db - {input_db}')
