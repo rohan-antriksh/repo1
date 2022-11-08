@@ -25,8 +25,6 @@ logger.setLevel(logging.INFO)
 
 if __name__ == "__main__":
     account_env = str(sys.argv[1])
-
-    TAG = os.environ.get('TAG_FILE', f'../iac/manual-deployment/{account_env}/{AWS_REGION}/stack-tags.json')
     with open(f'../iac/secrets.json', 'r') as config_l:
         _input = json.load(config_l)
     for input_db in _input["db_list"]:
